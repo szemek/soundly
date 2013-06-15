@@ -1,0 +1,3 @@
+production:
+  lastfm_apikey: <%= ENV['LASTFM_APIKEY'] %>
+  lastfm_secret: <%= ENV['LASTFM_SECRET'] %>
