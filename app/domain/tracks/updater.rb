@@ -10,7 +10,12 @@ class Tracks::Updater
       tracks = recent_tracks["recenttracks"]["track"]
 
       tracks.each do |track|
-        item = Track.find_or_create_by(mbid: track["mbid"], name: track["name"])
+        single = Track.find_or_create_by(mbid: track["mbid"], name: track["name"])
+        artist = Artist.find_or_create_by(mbid: track['artist']['mbid'], name: track['artist']['#text'])
+        album = Album.find_or_create_by(mbid: track['album']['mbid'], name: track['album']['#text'])
+        single.artist = artist
+        single.album = album
+        single.save
       end
     end
   end
