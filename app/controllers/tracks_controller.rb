@@ -5,7 +5,7 @@ class TracksController < ApplicationController
       :params => {
         method: 'user.getrecenttracks',
         user: 'przemyslawdabek',
-        api_key: Settings.lastfm_apikey,
+        api_key: Settings.lastfm_api_key,
         format: 'json',
         limit: 1
       }
