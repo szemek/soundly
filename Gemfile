@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '3.2.13'
 
 group :production do
@@ -24,3 +26,4 @@ end
 gem 'jquery-rails'
 gem 'haml'
 gem 'thin'
+gem 'mongoid'
