@@ -9,4 +9,8 @@ class Album
   field :mbid, type: String
 
   index({ mbid: 1 }, { unique: true, name: "mbid_index" })
+
+  def to_s
+    self.name
+  end
 end
