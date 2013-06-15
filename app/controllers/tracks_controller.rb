@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   def index
-    @tracks = Track.limit(50)
+    @tracks = Track.order_by(uts: 'desc').limit(50)
   end
 
   def update

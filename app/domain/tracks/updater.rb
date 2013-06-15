@@ -15,6 +15,7 @@ class Tracks::Updater
         album = Album.find_or_create_by(mbid: track['album']['mbid'], name: track['album']['#text'])
         single.artist = artist
         single.album = album
+        single.uts ||= track['date']['uts'].to_i
         single.save
       end
     end
