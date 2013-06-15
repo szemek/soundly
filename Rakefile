@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Resound::Application.load_tasks
+Soundly::Application.load_tasks
