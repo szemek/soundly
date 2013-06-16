@@ -1,9 +1,7 @@
 class Album
   include Mongoid::Document
 
-  belongs_to :artist
-
-  has_many :tracks
+  embedded_in :track
 
   field :name, type: String
   field :mbid, type: String

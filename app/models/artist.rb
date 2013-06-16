@@ -1,8 +1,7 @@
 class Artist
   include Mongoid::Document
 
-  has_many :tracks
-  has_many :albums
+  embedded_in :track
 
   field :name, type: String
   field :mbid, type: String
