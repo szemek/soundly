@@ -1,7 +1,10 @@
-%table
-  - @tracks.each do |track|
-    %tr
-      %td= track
-      %td= track.album
-      %td= track.artist
-      %td= Time.at(track.uts)
+- if @tracks.blank?
+  No tracks yet.
+- else
+  %table
+    - @tracks.each do |track|
+      %tr
+        %td= track
+        %td= track.album
+        %td= track.artist
+        %td= Time.at(track.uts)
