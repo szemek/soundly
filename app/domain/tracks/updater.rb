@@ -10,12 +10,14 @@ class Tracks::Updater
       tracks = recent_tracks["recenttracks"]["track"]
 
       tracks.each do |track|
-        single = Track.find_or_create_by(mbid: track["mbid"], name: track["name"])
+        uts = track['date']['uts'].to_i
+        # stop updating if track with specific uts exists
+        return if Track.where(uts: uts).exists?
+        single = Track.find_or_create_by(mbid: track["mbid"], name: track["name"], uts: uts)
         artist = Artist.find_or_create_by(mbid: track['artist']['mbid'], name: track['artist']['#text'])
         album = Album.find_or_create_by(mbid: track['album']['mbid'], name: track['album']['#text'])
         single.artist = artist
         single.album = album
-        single.uts ||= track['date']['uts'].to_i
         single.save
       end
     end
