@@ -5,4 +5,5 @@ Soundly::Application.routes.draw do
       post '/update' => 'tracks/update#create'
     end
   end
+  resources :artists, :only => [:index]
 end

@@ -1,0 +1,7 @@
+- if @artists.blank?
+  No artists yet.
+- else
+  %table
+    - @artists.each do |artist|
+      %tr
+        %td= artist
