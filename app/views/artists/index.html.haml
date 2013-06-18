@@ -4,4 +4,4 @@
   %table
     - @artists.each do |artist|
       %tr
-        %td= artist
+        %td= link_to artist, artist_path(artist)
