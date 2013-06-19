@@ -1,0 +1,23 @@
+<div ng-app="project">
+  <div ng-controller="TracksCtrl">
+    <input type="text" ng-model="search" class="search-query" placeholder="Search">
+    <table>
+      <thead>
+      <tr>
+        <th>Track</th>
+        <th>Artist</th>
+        <th>Name</th>
+        <th>Listened</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="track in tracks | filter:search | orderBy:'name'">
+        <td>{{track.name}}</td>
+        <td>{{track.artist.name}}</td>
+        <td>{{track.album.name}}</td>
+        <td>{{track.uts * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
