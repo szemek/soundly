@@ -1,10 +1,8 @@
 angular.module('project', ['ngResource'])
-.factory('Track', function($resource) {
-  var Track = $resource('/tracks');
-  return Track;
-});
+.factory('Track', ['$resource', function($resource) {
+  return $resource('/tracks');
+}]);
 
-
-function TracksCtrl($scope, Track) {
+var TracksCtrl = ['$scope', 'Track', function ($scope, Track) {
   $scope.tracks = Track.query();
-}
+}];
