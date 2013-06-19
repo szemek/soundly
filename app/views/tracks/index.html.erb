@@ -11,7 +11,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="track in tracks | filter:search | orderBy:'name'">
+      <tr ng-repeat="track in tracks | filter:search | orderBy:'uts':reverse=true">
         <td>{{track.name}}</td>
         <td>{{track.artist.name}}</td>
         <td>{{track.album.name}}</td>
