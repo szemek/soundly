@@ -10,3 +10,10 @@ table, th, td {
 tr:nth-child(odd) td {
   background: #ffffff;
 }
+
+table {
+  width: 100%;
+}
+td {
+  width: 25%;
+}
