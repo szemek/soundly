@@ -2,7 +2,7 @@ class TracksController < ApplicationController
   respond_to :html, :json
 
   def index
-    @tracks = Track.order_by(uts: 'desc').limit(50)
+    @tracks = Track.order_by(uts: 'desc')
 
     respond_with(@tracks)
   end
