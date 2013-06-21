@@ -21,6 +21,8 @@ class Tracks::Updater
   end
 
   def self.update_track(track)
+    # skip track being played
+    return if track['date'].nil?
     single = Track.find_or_initialize_by(mbid: track['mbid'], name: track['name'], uts: track['date']['uts'])
     # skip track if artist & album are set
     return if single.artist && single.album
