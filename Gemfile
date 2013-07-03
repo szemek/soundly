@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
+
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
 
 group :production do
   gem 'pg'
@@ -17,17 +21,16 @@ group :development, :test do
   gem 'rspec'
 end
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
 end
 
 gem 'jquery-rails'
-gem 'haml'
-gem 'thin'
-gem 'mongoid'
+gem 'haml', '>= 4.0.0'
+gem 'thin', '>= 1.5.1'
+gem 'mongoid', '4.0.0', :github => 'mongoid/mongoid'
 gem 'settingslogic'
 gem 'rest-client'
 gem 'angularjs-rails'
-gem 'draper'
+gem 'draper', '>= 1.2.1'
