@@ -13,8 +13,8 @@
       <tbody>
       <tr ng-repeat="track in tracks" >
         <td>{{track.name}}</td>
-        <td>{{track.artist.name}}</td>
-        <td>{{track.album.name}}</td>
+        <td>{{track.artist}}</td>
+        <td>{{track.album}}</td>
         <td>{{track.uts * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}</td>
       </tr>
       </tbody>
