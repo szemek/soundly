@@ -5,4 +5,9 @@ angular.module('project', ['ngResource'])
 
 var TracksCtrl = ['$scope', 'Track', function ($scope, Track) {
   $scope.tracks = Track.query();
+  $scope.search = function() {
+    $.getJSON('/tracks/search', {name: $scope.name}, function(data){
+      $scope.tracks = data;
+    });
+  };
 }];

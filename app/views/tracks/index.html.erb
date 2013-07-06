@@ -1,6 +1,6 @@
 <div ng-app="project">
   <div ng-controller="TracksCtrl">
-    <input type="text" ng-model="search" class="search-query" placeholder="Search">
+    <input type="text" ng-model="name" ng-change="search()" placeholder="Search">
     <table>
       <thead>
       <tr>
@@ -11,7 +11,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="track in tracks | orderBy:'uts':reverse=true | filter:search | limitTo:50" >
+      <tr ng-repeat="track in tracks" >
         <td>{{track.name}}</td>
         <td>{{track.artist.name}}</td>
         <td>{{track.album.name}}</td>
