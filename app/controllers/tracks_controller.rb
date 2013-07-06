@@ -2,8 +2,7 @@ class TracksController < ApplicationController
   respond_to :html, :json
 
   def index
-    @tracks = TrackDecorator.decorate_collection(Track.limit(50).order_by(uts: 'desc'))
-
+    @tracks = Track.limit(50).order_by(uts: 'desc')
     respond_with(@tracks)
   end
 
