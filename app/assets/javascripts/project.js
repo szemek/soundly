@@ -8,6 +8,7 @@ var TracksCtrl = ['$scope', 'Track', function ($scope, Track) {
   $scope.search = function() {
     $.getJSON('/tracks/search', {name: $scope.name}, function(data){
       $scope.tracks = data;
+      $scope.$apply(); // force refresh
     });
   };
 }];
