@@ -4,11 +4,15 @@ angular.module('project', ['ngResource'])
 }]);
 
 var TracksCtrl = ['$scope', 'Track', function ($scope, Track) {
-  $scope.tracks = Track.query();
-  $scope.search = function() {
+  var fetch = function($scope) {
     $.getJSON('/tracks/search', {name: $scope.name}, function(data){
       $scope.tracks = data;
       $scope.$apply(); // force refresh
     });
   };
+
+  $scope.tracks = Track.query();
+  $scope.search = _.debounce(function(){
+    fetch($scope);
+  }, 300);
 }];
