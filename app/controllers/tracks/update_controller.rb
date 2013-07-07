@@ -3,7 +3,8 @@ class Tracks::UpdateController < ApplicationController
   end
 
   def create
-    Tracks::Updater.run
+    pages = params[:pages].to_i
+    Tracks::Updater.run(pages)
     render :nothing => true, :status => 200
   end
 end

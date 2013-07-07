@@ -1,9 +1,11 @@
 class Tracks::Updater
   @@tracks_per_page = 200
 
-  def self.run
-    pages, rest = Tracks::Info.total_tracks.divmod(@@tracks_per_page)
-    pages += 1 if rest > 0
+  def self.run(pages = 0)
+    if pages == 0
+      pages, rest = Tracks::Info.total_tracks.divmod(@@tracks_per_page)
+      pages += 1 if rest > 0
+    end
 
     (1..pages).each do |page|
       Rails.logger.info "#{page}/#{pages}"
