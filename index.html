@@ -16,10 +16,20 @@
       <h1>Soundly</h1>
 
       <input type="text" id="search">
-      <ul id='tracks'></ul>
+      <table id='tracks'></table>
 
     </div>
   </div>
+
+  <!-- Templates -->
+  <script type='text/template' id="track-item">
+    <tr>
+      <td><%= track.name %></td>
+      <td><%= track.album %></td>
+      <td><%= track.artist %></td>
+      <td><%= new Date(track.uts * 1000) %></td>
+    </tr>
+  </script>
 
   <!-- Project JS files -->
   <script src="/js/jquery.js"></script>

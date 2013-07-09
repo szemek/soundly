@@ -1,13 +1,13 @@
 require(['$api/models'], function(models) {
 
-  $('#search').on('change', function(event) {
+  $('#search').on('keyup', function(event) {
     var name = $(this).val();
     $.get('http://soundly.herokuapp.com/tracks/search', {name: name}, function(tracks){
-      $('#tracks li').remove();
+      $('#tracks tr').remove();
 
       _.each(tracks, function(track){
-        var compiled = _.template("<li><%= name %></li>");
-        var item = compiled({name : track.name});
+        var compiled = _.template($('#track-item').html());
+        var item = compiled({track: track});
         $('#tracks').append(item)
       });
     });
