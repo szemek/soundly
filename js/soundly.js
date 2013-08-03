@@ -10,6 +10,7 @@ require(['$api/models'], function(models) {
       });
     });
   };
+  var _search = _.debounce(search, 300);
 
   search();
 
@@ -18,7 +19,7 @@ require(['$api/models'], function(models) {
 
   $('#search').on('keyup', function(event) {
     var name = $(this).val();
-    search(name);
+    _search(name);
   });
 
   $('#check').on('click', function(event) {
