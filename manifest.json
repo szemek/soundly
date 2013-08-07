@@ -17,6 +17,12 @@
       "title": {
         "en": "Home"
       }
+    },
+    {
+      "arguments": "lyrix",
+      "title": {
+        "en": "Lyrics"
+      }
     }
   ],
   "Dependencies": {
