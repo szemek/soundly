@@ -1,16 +1,19 @@
 class LyricsController < ApplicationController
   def index
+    lyrics = ""
+    no_lyrics = "No lyrics found"
+
     artist = params[:artist]
     title = params[:title]
 
     providers = [Azlyrics, Lyricswikia]
     providers.each do |provider|
       instance = provider.new(artist, title)
-      lyrix = instance.lyrics
+      lyrics = instance.lyrics
 
-      break if lyrix != "No lyrics found"
+      break if lyrics != no_lyrics
     end
 
-    render text: lyrix
+    render text: lyrics
   end
 end
