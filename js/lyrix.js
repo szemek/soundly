@@ -7,7 +7,7 @@ require(['$api/models'], function(models) {
       var trackName = track.name;
       $('#title').text(trackName);
 
-      $.post('http://lyrix.herokuapp.com/lyrics', {artist: artistName, title: trackName}, function(data){
+      $.get('http://soundly.herokuapp.com/lyrics', {artist: artistName, title: trackName}, function(data){
         $('#lyrics').html(data);
       });
     }
