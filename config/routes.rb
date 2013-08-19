@@ -1,9 +1,12 @@
 Soundly::Application.routes.draw do
   root :to => redirect('/tracks')
   resources :tracks do
-    get '/update' => 'tracks/update#index', :on => :collection
-    post '/update' => 'tracks/update#create', :on => :collection
-    get '/search' => 'tracks/search#index', :on => :collection
+    collection do
+      get '/update' => 'tracks/update#index'
+      post '/update' => 'tracks/update#create'
+      get '/search' => 'tracks/search#index'
+    end
   end
   resources :artists, :only => [:index, :show]
+  get '/lyrics' => 'lyrics#index'
 end
