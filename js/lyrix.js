@@ -8,7 +8,7 @@ require(['$api/models'], function(models) {
       $('#title').text(trackName);
 
       $.get('http://soundly.herokuapp.com/lyrics', {artist: artistName, title: trackName}, function(data){
-        $('#lyrics').html(data);
+        $('#text').html(data);
       });
     }
   }
@@ -18,12 +18,6 @@ require(['$api/models'], function(models) {
   var track = player.track;
 
   player.addEventListener('change', function() {
-    player.load('track');
-    track = player.track;
-    update_info(track);
-  });
-
-  $('button#update').on('click', function() {
     player.load('track');
     track = player.track;
     update_info(track);

@@ -53,3 +53,9 @@ section {
 table {
   width: 100%;
 }
+
+#text {
+  margin-top: 20px;
+  height: 500px;
+  -webkit-column-count: 2;
+}
