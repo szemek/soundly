@@ -1,5 +1,9 @@
 require(['$api/models'], function(models) {
-  function update_info(track) {
+  var player = models.player;
+  function update_lyrics() {
+    player.load('track');
+    var track = player.track;
+
     if(track){
       var artistName = track.artists[0].name;
       $('#artist').text(artistName);
@@ -12,16 +16,14 @@ require(['$api/models'], function(models) {
       });
     }
   }
-
-  var player = models.player;
-  player.load('track');
-  var track = player.track;
-
-  player.addEventListener('change', function() {
-    player.load('track');
-    track = player.track;
-    update_info(track);
+  // listeners
+  models.application.addEventListener('arguments', function() {
+    var arguments = api.models.application.arguments;
+    if(arguments[0] == 'lyrix') {
+      update_lyrics();
+    }
   });
+  player.addEventListener('change', update_lyrics);
 
-  update_info(track);
+  update_lyrics();
 });
