@@ -1,0 +1,5 @@
+%table
+  - ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].each do |day|
+    %tr
+      - (0..23).each do |hour|
+        %td.span1= @data[day][hour]

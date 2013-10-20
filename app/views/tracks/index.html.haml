@@ -1,0 +1,16 @@
+%div{'ng-app' => 'project'}
+  %div{'ng-controller' => 'TracksCtrl'}
+    %input{'type' => 'text', 'ng-mode' => 'name', 'ng-change' => 'search()', 'placeholder' => 'Search' }
+    %table
+      %thead
+        %tr
+          %th.span6 Track
+          %th.span6 Artist
+          %th.span6 Album
+          %th.span6 Listened
+      %tbody
+        %tr{'ng-repeat' => 'track in tracks'}
+          %td {{track.name}}
+          %td {{track.artist}}
+          %td {{track.album}}
+          %td {{track.uts * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}
