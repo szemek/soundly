@@ -65,6 +65,8 @@ GEM
       multi_json (~> 1.0)
     haml (4.0.3)
       tilt
+    highcharts-rails (3.0.6)
+      railties (>= 3.1)
     hike (1.2.3)
     i18n (0.6.4)
     jquery-rails (3.0.1)
@@ -173,6 +175,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dalli
   haml (>= 4.0.0)
+  highcharts-rails (>= 3.0.6)
   jquery-rails
   memcachier
   mongoid (= 4.0.0)!
