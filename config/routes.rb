@@ -9,4 +9,6 @@ Soundly::Application.routes.draw do
   end
   resources :artists, :only => [:index, :show]
   get '/lyrics' => 'lyrics#index'
+
+  get '/activity' => 'activity#show'
 end

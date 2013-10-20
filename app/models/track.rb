@@ -14,4 +14,8 @@ class Track
   def to_s
     self.name
   end
+
+  def listened_at
+    Time.at(uts)
+  end
 end
