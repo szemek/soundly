@@ -1,7 +1,9 @@
 %table
   - (0..23).each do |hour|
     %th= hour
-  - ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].each do |day|
+  - (0..6).each do |day|
     %tr
       - (0..23).each do |hour|
         %td.span1= @data[day][hour]
+
+= raw @svg
