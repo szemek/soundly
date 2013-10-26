@@ -1,0 +1,26 @@
+.label {
+  font: 11px Helvetica, arial, freesans, clean, sans-serif;
+  line-height: 1.4;
+  fill: #555;
+  stroke: none;
+}
+
+line.axis {
+  stroke-width: 1;
+  stroke: #eee;
+  shape-rendering: crispedges;
+}
+
+.axis {
+  fill: #aaa;
+  font-size: 10px;
+}
+
+line.axis.even {
+  stroke: #e0e0e0;
+}
+
+circle.day {
+  stroke-width: 0;
+  fill: #444;
+}

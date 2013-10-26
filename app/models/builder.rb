@@ -18,7 +18,7 @@ class Builder
 
               (0..23).map do |hour|
                 xml.g('class' => 'hour', 'transform' => "translate(#{104 + hour * 34}, 0)", 'width' => '31') {
-                  xml.line('x1' => '0', 'y1' => '45', 'x2' => '0', 'y2' => '60', 'class' => "axis #{hour.even? ? 'even' : 'odd'}")
+                  xml.line('x1' => '0', 'y1' => "#{hour.even? ? 45 : 50}", 'x2' => '0', 'y2' => '60', 'class' => "axis #{hour.even? ? 'even' : 'odd'}")
                   value = data[day][hour].to_f || 0.0
                   r = radius * Math.sqrt(value / maximum)
                   xml.circle('r' => r, 'cy' => '25', 'class' => 'day')
