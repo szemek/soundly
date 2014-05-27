@@ -1,9 +1,9 @@
-angular.module('project', ['ngResource'])
+var app = angular.module('project', ['ngResource'])
 .factory('Track', ['$resource', function($resource) {
-  return $resource('/tracks');
+  return $resource('/tracks.json');
 }]);
 
-var TracksCtrl = ['$scope', 'Track', function ($scope, Track) {
+app.controller('TracksController', ['$scope', 'Track', function ($scope, Track) {
   var fetch = function($scope) {
     $.getJSON('/tracks/search', {name: $scope.name}, function(data){
       $scope.tracks = data;
@@ -15,4 +15,4 @@ var TracksCtrl = ['$scope', 'Track', function ($scope, Track) {
   $scope.search = _.debounce(function(){
     fetch($scope);
   }, 300);
-}];
+}]);
