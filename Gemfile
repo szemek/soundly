@@ -29,7 +29,7 @@ end
 
 gem 'jquery-rails'
 gem 'haml', '>= 4.0.0'
-gem 'thin', '>= 1.5.1'
+gem 'thin', '>= 1.6.2'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'settingslogic'
 gem 'rest-client'
