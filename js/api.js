@@ -8,7 +8,10 @@ require(["$api/i18n"], function(i18n) { window.api.i18n = i18n; });
 require(["$api/library"], function(library) { window.api.library = library; });
 require(["$api/location"], function(location) { window.api.location = location; });
 require(["$api/messaging"], function(messaging) { window.api.messaging = messaging; });
-require(["$api/models"], function(models) { window.api.models = models; });
+require(["$api/models"], function(models) {
+  window.api.models = models;
+  window.player = models.player;
+});
 require(["$api/offline"], function(offline) { window.api.offline = offline; });
 require(["$api/relations"], function(relations) { window.api.relations = relations; });
 require(["$api/runtime"], function(runtime) { window.api.runtime = runtime; });
