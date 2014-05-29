@@ -23,6 +23,12 @@
       "title": {
         "en": "Lyrics"
       }
+    },
+    {
+      "arguments": "playlist",
+      "title": {
+        "en": "Playlist"
+      }
     }
   ],
   "Dependencies": {

@@ -7,6 +7,7 @@ body {
   min-height: 100%;
   padding: 10px 0 10px;
   box-sizing: border-box;
+  margin-top: 50px;
 }
 
 #wrapper {
@@ -44,10 +45,6 @@ section {
   margin: 20px;
   color: white;
   text-shadow: rgba(0, 0, 0, 0.772549) 0px 1px 0px;
-}
-
-#index, #lyrix {
-  margin-top: 50px;
 }
 
 table {

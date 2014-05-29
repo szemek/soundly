@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="soundly">
 <head>
   <!-- Spotify CSS files -->
   <link rel="stylesheet" type="text/css" href="sp://resources/css/eve.css">
@@ -26,6 +26,14 @@
       <h2><span id="artist"></span> &mdash; <span id="title"></span></h2>
       <div id="text"></div>
     </div>
+
+    <div id="playlist" class="section" style="display: none;" ng-controller="PlaylistController">
+      <table>
+        <tr ng-repeat="track in tracks">
+          <td>{{track.name}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <!-- Templates -->
@@ -42,6 +50,7 @@
   <script src="/js/angular.min.js"></script>
   <script src="/js/jquery-2.0.3.min.js"></script>
   <script src="/js/underscore-min.js"></script>
+  <script src="/js/app.js"></script>
   <script src="/js/api.js"></script>
   <script src="/js/tabs.js"></script>
   <script src="/js/flow.js"></script>
