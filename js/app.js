@@ -13,7 +13,7 @@ app.controller('PlaylistController', ['$scope', function($scope){
         playlist.tracks.snapshot().done(function(snapshot){
           _.each(_.range(snapshot.length), function(i){
             $scope.tracks.push(snapshot.get(i));
-            $scope.$apply();
+            _.defer(function(){$scope.$apply();});
           });
         });
       });
@@ -28,5 +28,16 @@ app.controller('PlaylistController', ['$scope', function($scope){
     });
 
     $scope.updatePlaylist(player, models);
+  });
+}]);
+
+app.controller('ScrobblesController', ['$scope', '$http', function($scope, $http){
+  var SOUNDLY_URL = 'http://soundly.herokuapp.com/tracks/search';
+  $http.defaults.headers.common['Accept'] = 'application/json';
+
+  $scope.scrobbles = [];
+  $http.get(SOUNDLY_URL).success(function(data){
+    $scope.scrobbles = data;
+    _.defer(function(){$scope.$apply();});
   });
 }]);
