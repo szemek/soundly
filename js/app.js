@@ -36,8 +36,18 @@ app.controller('ScrobblesController', ['$scope', '$http', function($scope, $http
   $http.defaults.headers.common['Accept'] = 'application/json';
 
   $scope.scrobbles = [];
-  $http.get(SOUNDLY_URL).success(function(data){
-    $scope.scrobbles = data;
-    _.defer(function(){$scope.$apply();});
-  });
+
+  $scope.fetchScrobbles = function(options){
+    var params = options || {};
+    $http.get(SOUNDLY_URL, {params: params}).success(function(data){
+      $scope.scrobbles = data;
+      _.defer(function(){$scope.$apply();});
+    });
+  };
+
+  $scope.search = _.debounce(function(){
+    $scope.fetchScrobbles({name: $scope.query});
+  }, 500);
+
+  $scope.fetchScrobbles();
 }]);

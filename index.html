@@ -17,6 +17,7 @@
     </header>
 
     <div id="index" class="section" ng-controller="ScrobblesController">
+      <input type='text' ng-model='query' ng-change='search()'>
       <table id='tracks'>
         <tr ng-repeat="track in scrobbles">
           <td>{{track.name }}</td>
