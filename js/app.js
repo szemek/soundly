@@ -51,3 +51,6 @@ app.controller('ScrobblesController', ['$scope', '$http', function($scope, $http
 
   $scope.fetchScrobbles();
 }]);
+
+app.controller('ActivityController', ['$scope', function($scope){
+}])
