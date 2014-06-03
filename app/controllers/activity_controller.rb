@@ -13,11 +13,7 @@ class ActivityController < ApplicationController
   end
 
   def last_30_days
-    respond_to do |format|
-      format.html do
-        @data = last_30_days_activity
-      end
-    end
+    render json: last_30_days_activity
   end
 
   private

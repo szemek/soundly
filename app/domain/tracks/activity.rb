@@ -12,9 +12,12 @@ class Tracks::Activity
   end
 
   def group_by_day
+    start = (Time.now - 29.days).beginning_of_day.to_i
+    stop = Time.now.beginning_of_day.to_i
+
     datetimes = tracks.pluck(:uts).map{|e| Time.at(e).beginning_of_day}
 
-    datetimes.count_by{|datetime| datetime}
+    (start..stop).step(1.day).map{|timepoint| datetimes.count(Time.at(timepoint).beginning_of_day)}
   end
 
   def group_by_day_and_hour
