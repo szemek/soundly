@@ -1,7 +1,10 @@
 class ActivityController < ApplicationController
   def show
     respond_to do |format|
-      format.html
+      format.html do
+        @data = activity
+        @svg = punchcard
+      end
       format.svg do
         response.headers["Content-Type"] = 'image/svg+xml'
         render inline: punchcard
@@ -12,10 +15,10 @@ class ActivityController < ApplicationController
   private
 
   def activity
-    Tracks::Activity.new.gather
+    @activity ||= Tracks::Activity.new.gather
   end
 
   def punchcard
-    PunchcardGenerator.new(activity).generate
+    @punchcard ||= PunchcardGenerator.new(activity).generate
   end
 end
