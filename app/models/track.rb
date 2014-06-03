@@ -18,4 +18,10 @@ class Track
   def listened_at
     Time.at(uts)
   end
+
+  def self.last_30_days
+    timepoint = (Time.now - 29.days).beginning_of_day.to_i
+
+    self.where(:uts.gte => timepoint)
+  end
 end

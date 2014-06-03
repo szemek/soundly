@@ -1,8 +1,8 @@
 class ActivityController < ApplicationController
-  def show
+  def all
     respond_to do |format|
       format.html do
-        @data = activity
+        @data = all_activity
         @svg = punchcard
       end
       format.svg do
@@ -12,13 +12,25 @@ class ActivityController < ApplicationController
     end
   end
 
+  def last_30_days
+    respond_to do |format|
+      format.html do
+        @data = last_30_days_activity
+      end
+    end
+  end
+
   private
 
-  def activity
-    @activity ||= Tracks::Activity.new.gather
+  def last_30_days_activity
+    @last_30_days_activity ||= Tracks::Activity.new(Track.last_30_days).group_by_day
+  end
+
+  def all_activity
+    @all_activity ||= Tracks::Activity.new(Track.all).group_by_day_and_hour
   end
 
   def punchcard
-    @punchcard ||= PunchcardGenerator.new(activity).generate
+    @punchcard ||= PunchcardGenerator.new(all_activity).generate
   end
 end

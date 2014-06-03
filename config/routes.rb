@@ -10,5 +10,6 @@ Soundly::Application.routes.draw do
   resources :artists, :only => [:index, :show]
   get '/lyrics' => 'lyrics#index'
 
-  get '/activity' => 'activity#show'
+  get '/activity/all' => 'activity#all'
+  get '/activity/last_30_days' => 'activity#last_30_days'
 end
