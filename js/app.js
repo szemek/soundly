@@ -32,14 +32,14 @@ app.controller('PlaylistController', ['$scope', function($scope){
 }]);
 
 app.controller('ScrobblesController', ['$scope', '$http', function($scope, $http){
-  var SOUNDLY_URL = 'http://soundly.herokuapp.com/tracks/search';
+  var soundly_search_url = 'http://soundly.herokuapp.com/tracks/search';
   $http.defaults.headers.common['Accept'] = 'application/json';
 
   $scope.scrobbles = [];
 
   $scope.fetchScrobbles = function(options){
     var params = options || {};
-    $http.get(SOUNDLY_URL, {params: params}).success(function(data){
+    $http.get(soundly_search_url, {params: params}).success(function(data){
       $scope.scrobbles = data;
       _.defer(function(){$scope.$apply();});
     });
@@ -52,5 +52,11 @@ app.controller('ScrobblesController', ['$scope', '$http', function($scope, $http
   $scope.fetchScrobbles();
 }]);
 
-app.controller('ActivityController', ['$scope', function($scope){
+app.controller('ActivityController', ['$scope', '$http', '$sce', function($scope, $http, $sce){
+  var activity_svg_url = 'http://soundly.herokuapp.com/activity.svg';
+
+  $http.get(activity_svg_url).success(function(data){
+    $scope.svg = $sce.trustAsHtml(data);
+    _.defer(function(){$scope.$apply();});
+  });
 }])

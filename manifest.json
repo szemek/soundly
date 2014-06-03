@@ -29,6 +29,12 @@
       "title": {
         "en": "Playlist"
       }
+    },
+    {
+      "arguments": "activity",
+      "title": {
+        "en": "Activity"
+      }
     }
   ],
   "Dependencies": {
