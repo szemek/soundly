@@ -56,3 +56,22 @@ table {
   height: 500px;
   -webkit-column-count: 2;
 }
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: black;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
