@@ -36,6 +36,7 @@
     <div id="playlist" class="section" style="display: none;" ng-controller="PlaylistController">
       <table>
         <tr ng-repeat="track in tracks">
+          <td><strong>{{track.artist}}</strong></td>
           <td>{{track.name}}</td>
         </tr>
       </table>

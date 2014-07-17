@@ -12,7 +12,8 @@ app.controller('PlaylistController', ['$scope', function($scope){
       playlist.load('tracks').done(function(){
         playlist.tracks.snapshot().done(function(snapshot){
           _.each(_.range(snapshot.length), function(i){
-            $scope.tracks.push(snapshot.get(i));
+            var track = snapshot.get(i);
+            $scope.tracks.push({name: track.name, artist: track.artists[0].name});
             _.defer(function(){$scope.$apply();});
           });
         });

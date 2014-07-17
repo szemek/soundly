@@ -75,3 +75,11 @@ table {
   margin: 1px;
   color: white;
 }
+
+#playlist table {
+  border-collapse: collapse;
+}
+
+#playlist table tr {
+  border-bottom: 1px solid #ccc;
+}
