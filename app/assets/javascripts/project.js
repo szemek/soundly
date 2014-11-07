@@ -1,9 +1,11 @@
-var app = angular.module('project', ['ngResource'])
-.factory('Track', ['$resource', function($resource) {
-  return $resource('/tracks.json');
-}]);
+var app = angular.module('project', ['ngResource']);
 
-app.controller('TracksController', ['$scope', 'Track', function ($scope, Track) {
+app.controller('TracksController', ['$scope', function ($scope) {
+  $.getJSON('/tracks.json', function(data){
+    $scope.tracks = data.tracks;
+    $scope.$apply();
+  });
+
   var fetch = function($scope) {
     $.getJSON('/tracks/search', {name: $scope.name}, function(data){
       $scope.tracks = data;
@@ -11,7 +13,6 @@ app.controller('TracksController', ['$scope', 'Track', function ($scope, Track) 
     });
   };
 
-  $scope.tracks = Track.query();
   $scope.search = _.debounce(function(){
     fetch($scope);
   }, 300);
