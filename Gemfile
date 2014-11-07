@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.4'
 
 gem 'rails', '~> 4.1.1'
 
@@ -27,16 +27,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'jquery-rails'
-gem 'haml', '>= 4.0.0'
-gem 'thin', '>= 1.6.2'
-gem 'mongoid', github: 'mongoid/mongoid'
-gem 'settingslogic'
-gem 'rest-client'
-gem 'angularjs-rails'
-gem 'underscore-rails', '>= 1.4.4'
-gem 'active_model_serializers', '>= 0.8.1'
-gem 'dalli'
-gem 'memcachier'
-gem 'nokogiri'
-gem 'highcharts-rails', '>= 3.0.6'
+gem 'active_model_serializers', '~> 0.9.0'
+gem 'angularjs-rails', '~> 1.3.1'
+gem 'dalli', '~> 2.7.2'
+gem 'haml', '~> 4.0.5'
+gem 'highcharts-rails', '~> 4.0.4'
+gem 'jquery-rails', '~> 3.1.2'
+gem 'memcachier', '~> 0.0.2'
+gem 'mongoid', '~> 4.0.0'
+gem 'nokogiri', '~> 1.6.4.1'
+gem 'rest-client', '~> 1.7.2'
+gem 'settingslogic', '~> 2.0.9'
+gem 'thin', '~> 1.6.3'
+gem 'underscore-rails', '~> 1.7.0'
