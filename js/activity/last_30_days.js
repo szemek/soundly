@@ -35,7 +35,7 @@ angular.module('soundly').controller('Last30DaysActivityController', ['$scope', 
   };
 
   $http.get(last_30_days_activity_url).success(function(data){
-    draw(data);
+    draw(data.activity);
   });
 }])
 

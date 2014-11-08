@@ -41,7 +41,7 @@ app.controller('ScrobblesController', ['$scope', '$http', function($scope, $http
   $scope.fetchScrobbles = function(options){
     var params = options || {};
     $http.get(soundly_search_url, {params: params}).success(function(data){
-      $scope.scrobbles = data;
+      $scope.scrobbles = data.search;
       _.defer(function(){$scope.$apply();});
     });
   };
