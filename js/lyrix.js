@@ -18,7 +18,7 @@ require(['$api/models'], function(models) {
   }
   // listeners
   models.application.addEventListener('arguments', function() {
-    var arguments = api.models.application.arguments;
+    var arguments = models.application.arguments;
     if(arguments[0] == 'lyrix') {
       update_lyrics();
     }
