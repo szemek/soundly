@@ -7,17 +7,19 @@ app.controller('PlaylistController', ['$scope', function($scope){
     $scope.tracks = [];
 
     player.load('context').done(function(){
-      var playlist = new models.Playlist(player.context.uri);
+      if(player.context !== null){
+        var playlist = new models.Playlist(player.context.uri);
 
-      playlist.load('tracks').done(function(){
-        playlist.tracks.snapshot().done(function(snapshot){
-          _.each(_.range(snapshot.length), function(i){
-            var track = snapshot.get(i);
-            $scope.tracks.push({name: track.name, artist: track.artists[0].name});
-            _.defer(function(){$scope.$apply();});
+        playlist.load('tracks').done(function(){
+          playlist.tracks.snapshot().done(function(snapshot){
+            _.each(_.range(snapshot.length), function(i){
+              var track = snapshot.get(i);
+              $scope.tracks.push({name: track.name, artist: track.artists[0].name});
+              _.defer(function(){$scope.$apply();});
+            });
           });
         });
-      });
+      }
     });
   };
 
