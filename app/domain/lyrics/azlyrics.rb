@@ -1,15 +1,14 @@
-require 'open-uri'
-
 module Lyrics
-  class Azlyrics
-    def initialize(artist, title)
-      @artist = artist.downcase.gsub(/\W/, '')
-      @title = title.downcase.gsub(/\W/, '')
+  class Azlyrics < Provider
+    def prepare_url
+      @artist.downcase!.gsub!(/\W/, '')
+      @title.downcase!.gsub!(/\W/, '')
     end
 
     def lyrics
+      super
+
       begin
-        url = "http://www.azlyrics.com/lyrics/#{@artist}/#{@title}.html"
         puts "GET #{url}"
         html = open(url).read
         doc = Nokogiri::HTML(html)
@@ -23,6 +22,10 @@ module Lyrics
       end
 
       lyrix
+    end
+
+    def url
+      "http://www.azlyrics.com/lyrics/#{@artist}/#{@title}.html"
     end
   end
 end

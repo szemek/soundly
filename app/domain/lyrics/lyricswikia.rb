@@ -1,10 +1,9 @@
-require 'open-uri'
-
 module Lyrics
-  class Lyricswikia
-    def initialize(artist, title)
-      @artist = artist.downcase
-      @title = title.downcase
+  class Lyricswikia < Provider
+    def prepare_url
+      @artist.downcase!
+      @title.downcase!
+
       rules = [
         ['?', '%3F'],
         ["'", '%27'],
@@ -17,8 +16,9 @@ module Lyrics
     end
 
     def lyrics
+      super
+
       begin
-        url = "http://lyrics.wikia.com/#{@artist}:#{@title}"
         puts "GET #{url}"
         html = open(url).read
         doc = Nokogiri::HTML(html)
@@ -38,6 +38,10 @@ module Lyrics
       end
 
       lyrix
+    end
+
+    def url
+      "http://lyrics.wikia.com/#{artist}:#{title}"
     end
   end
 end
