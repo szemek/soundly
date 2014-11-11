@@ -26,6 +26,10 @@ module Lyrics
         doc.search('.rtMatcher').remove
         # remove comments
         doc.xpath('//comment()').remove
+        # remove JavaScript
+        doc.css('script').remove
+        doc.css('.lyricsbreak').remove
+
         lyrix = doc.css('.lyricbox')[0].inner_html
       rescue Exception, :as => e
         puts "Exception: #{e.message}"
