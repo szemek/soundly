@@ -6,7 +6,7 @@ class LyricsController < ApplicationController
     artist = params[:artist]
     title = params[:title]
 
-    providers = [Azlyrics, Lyricswikia]
+    providers = [Lyrics::Azlyrics, Lyrics::Lyricswikia]
     providers.each do |provider|
       instance = provider.new(artist, title)
       lyrics = instance.lyrics
