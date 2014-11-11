@@ -48,6 +48,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    colored (1.2)
     connection_pool (2.0.0)
     daemons (1.1.9)
     dalli (2.7.2)
@@ -181,6 +182,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (>= 4.0.0)
+  colored (~> 1.2)
   dalli (~> 2.7.2)
   haml (~> 4.0.5)
   highcharts-rails (~> 4.0.4)

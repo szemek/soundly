@@ -29,6 +29,7 @@ end
 
 gem 'active_model_serializers', '~> 0.9.0'
 gem 'angularjs-rails', '~> 1.3.1'
+gem 'colored', '~> 1.2'
 gem 'dalli', '~> 2.7.2'
 gem 'haml', '~> 4.0.5'
 gem 'highcharts-rails', '~> 4.0.4'
