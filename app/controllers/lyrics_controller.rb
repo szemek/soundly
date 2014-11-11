@@ -1,7 +1,6 @@
 class LyricsController < ApplicationController
   def index
     lyrics = ""
-    no_lyrics = "No lyrics found"
 
     artist = params[:artist]
     title = params[:title]
@@ -11,7 +10,7 @@ class LyricsController < ApplicationController
       instance = provider.new(artist, title)
       lyrics = instance.lyrics
 
-      break if lyrics != no_lyrics
+      break if lyrics
     end
 
     render text: lyrics
