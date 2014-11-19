@@ -5,9 +5,9 @@ module Lyrics
     attr_accessor :artist, :title
     attr_accessor :doc
 
-    def initialize(artist, title)
-      @artist = artist.clone
-      @title = title.clone
+    def initialize(args)
+      @artist = args[:artist].clone
+      @title = args[:title].clone
     end
 
     def lyrics

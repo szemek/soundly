@@ -7,7 +7,7 @@ class LyricsController < ApplicationController
 
     providers = [Lyrics::Azlyrics, Lyrics::Lyricswikia]
     providers.each do |provider|
-      instance = provider.new(artist, title)
+      instance = provider.new(artist: artist, title: title)
       lyrics = instance.lyrics
 
       break if lyrics
