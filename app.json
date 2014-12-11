@@ -1,0 +1,11 @@
+{
+  "name": "Soundly",
+  "addons": [
+    "mongolab"
+  ],
+  "env": {
+    "LASTFM_SECRET": "REDACTED",
+    "LASTFM_API_KEY": "REDACTED"
+  },
+  "repository": "https://github.com/szemek/soundly"
+}
