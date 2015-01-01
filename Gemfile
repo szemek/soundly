@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.2.0'
 
 gem 'rails', '~> 4.1.1'
 
@@ -32,6 +32,7 @@ gem 'angularjs-rails', '~> 1.3.1'
 gem 'colored', '~> 1.2'
 gem 'dalli', '~> 2.7.2'
 gem 'dotenv-rails', '~> 1.0.2'
+gem 'eventmachine', '~> 1.0.4'
 gem 'haml', '~> 4.0.5'
 gem 'highcharts-rails', '~> 4.0.4'
 gem 'jquery-rails', '~> 3.1.2'

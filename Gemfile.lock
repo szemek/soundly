@@ -58,7 +58,7 @@ GEM
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.4)
     execjs (2.2.2)
     haml (4.0.5)
       tilt
@@ -187,6 +187,7 @@ DEPENDENCIES
   colored (~> 1.2)
   dalli (~> 2.7.2)
   dotenv-rails (~> 1.0.2)
+  eventmachine (~> 1.0.4)
   haml (~> 4.0.5)
   highcharts-rails (~> 4.0.4)
   jquery-rails (~> 3.1.2)
