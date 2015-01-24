@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.7)
       actionpack (= 4.1.7)
@@ -29,7 +30,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    angularjs-rails (1.3.1)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
     better_errors (2.0.0)
@@ -112,6 +112,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.7)
       sprockets-rails (~> 2.0)
+    rails-assets-angular (1.3.10)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -179,7 +180,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.9.0)
-  angularjs-rails (~> 1.3.1)
   awesome_print
   better_errors
   binding_of_caller
@@ -197,6 +197,7 @@ DEPENDENCIES
   pg
   pry-rails
   rails (~> 4.1.1)
+  rails-assets-angular (~> 1.3.10)!
   rails_12factor
   rest-client (~> 1.7.2)
   rspec
