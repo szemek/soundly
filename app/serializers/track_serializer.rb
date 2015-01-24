@@ -1,9 +1,5 @@
 class TrackSerializer < ActiveModel::Serializer
-  attributes :id, :name, :artist, :album, :uts
-
-  def id
-    object.id.to_s
-  end
+  attributes :name, :artist, :album, :uts
 
   def artist
     object.artist.name
