@@ -1,10 +1,10 @@
 Soundly::Application.routes.draw do
-  root :to => redirect('/tracks')
+  root 'tracks#index'
+
   resources :tracks do
     collection do
       get '/update' => 'tracks/update#index'
       post '/update' => 'tracks/update#create'
-      get '/search' => 'tracks/search#index'
     end
   end
   resources :artists, :only => [:index, :show]
@@ -12,4 +12,10 @@ Soundly::Application.routes.draw do
 
   get '/activity/all' => 'activity#all'
   get '/activity/last_30_days' => 'activity#last_30_days'
+
+  namespace :api do
+    resources :tracks, only: [:index] do
+      post :search, on: :collection
+    end
+  end
 end
