@@ -1,5 +1,5 @@
-angular.module('soundly').controller('Last30DaysActivityController', ['$scope', '$http', function($scope, $http){
-  var last_30_days_activity_url = 'http://soundly.herokuapp.com/activity/last_30_days.json';
+angular.module('soundly').controller('RecentActivityController', ['$scope', '$http', function($scope, $http){
+  var last_30_days_activity_url = 'http://soundly.herokuapp.com/activity/recent.json';
 
   var draw = function(data){
     var width = 800,
