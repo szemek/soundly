@@ -8,7 +8,6 @@ module Lyrics
     end
 
     def get
-      providers = [Lyrics::Azlyrics, Lyrics::Lyricswikia]
       providers.each do |provider|
         instance = provider.new(artist: artist, title: title)
         lyrics = instance.lyrics
@@ -17,6 +16,16 @@ module Lyrics
       end
 
       "Lyrics not found"
+    end
+
+    private
+
+    def providers
+      [
+        Lyrics::Providers::Azlyrics,
+        Lyrics::Providers::Lyricswikia,
+        Lyrics::Providers::Lyricsmania,
+      ]
     end
   end
 end
