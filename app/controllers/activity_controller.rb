@@ -6,8 +6,7 @@ class ActivityController < ApplicationController
         @svg = punchcard
       end
       format.svg do
-        response.headers["Content-Type"] = 'image/svg+xml'
-        render inline: punchcard
+        render inline: punchcard, content_type: Mime::SVG
       end
     end
   end
