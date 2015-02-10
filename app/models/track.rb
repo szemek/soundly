@@ -19,7 +19,7 @@ class Track
     Time.at(uts)
   end
 
-  def self.last_30_days
+  def self.recent
     timepoint = (Time.now - 29.days).beginning_of_day.to_i
 
     self.where(:uts.gte => timepoint)

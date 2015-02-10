@@ -11,14 +11,14 @@ class ActivityController < ApplicationController
     end
   end
 
-  def last_30_days
-    render json: last_30_days_activity
+  def recent
+    render json: recent_activity
   end
 
   private
 
-  def last_30_days_activity
-    @last_30_days_activity ||= Tracks::Activity.new(Track.last_30_days).group_by_day
+  def recent_activity
+    @recent_activity ||= Tracks::Activity.new(Track.recent).group_by_day
   end
 
   def all_activity

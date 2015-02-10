@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/lyrics' => 'lyrics#index'
 
   get '/activity/all' => 'activity#all'
-  get '/activity/last_30_days' => 'activity#last_30_days'
+  get '/activity/recent' => 'activity#recent'
 
   namespace :api do
     resources :tracks, only: [:index] do
