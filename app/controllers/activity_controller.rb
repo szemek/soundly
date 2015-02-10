@@ -27,6 +27,6 @@ class ActivityController < ApplicationController
   end
 
   def punchcard
-    @punchcard ||= PunchcardGenerator.new(all_activity).generate
+    @punchcard ||= Punchcard.new(all_activity).generate
   end
 end
