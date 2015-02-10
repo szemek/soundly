@@ -31,7 +31,7 @@ module Lyrics
       end
 
       def document
-        HTTParty.get(url).body
+        HTTParty.get(URI.encode(url)).body
       end
 
       def clean
