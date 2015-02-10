@@ -1,10 +1,10 @@
 module Lastfm
-  class Library
-    def self.get_tracks(user: 'przemyslawdabek', limit: 1, page: 1)
+  class User
+    def self.get_recent_tracks(user: 'przemyslawdabek', limit: 1, page: 1)
       response = RestClient.get "http://ws.audioscrobbler.com/2.0/", {
         :params => {
-          api_key: Settings.lastfm_api_key,
-          method: 'library.gettracks',
+          api_key: Lastfm::Settings.api_key,
+          method: 'user.getrecenttracks',
           user: user,
           page: page,
           limit: limit,
