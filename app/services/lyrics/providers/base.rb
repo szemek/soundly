@@ -1,5 +1,3 @@
-require 'open-uri'
-
 module Lyrics
   module Providers
     class Base
@@ -29,7 +27,11 @@ module Lyrics
 
       def fetch
         puts "GET #{url}".blue
-        @doc = Nokogiri::HTML(open(url))
+        @doc = Nokogiri::HTML(document)
+      end
+
+      def document
+        HTTParty.get(url).body
       end
 
       def clean
