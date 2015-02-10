@@ -5,9 +5,11 @@ module Lyrics
     attr_accessor :artist, :title
     attr_accessor :doc
 
+    include ActiveSupport::Inflector
+
     def initialize(args)
-      @artist = args[:artist].clone
-      @title = args[:title].clone
+      @artist = transliterate(args[:artist].clone)
+      @title = transliterate(args[:title].clone)
     end
 
     def lyrics
