@@ -1,18 +1,11 @@
 class LyricsController < ApplicationController
   def index
-    lyrics = ""
+    render plain: lyrics
+  end
 
-    artist = params[:artist]
-    title = params[:title]
+  private
 
-    providers = [Lyrics::Azlyrics, Lyrics::Lyricswikia]
-    providers.each do |provider|
-      instance = provider.new(artist: artist, title: title)
-      lyrics = instance.lyrics
-
-      break if lyrics
-    end
-
-    render text: lyrics
+  def lyrics
+    Lyrics::Fetcher.new(params).get
   end
 end
