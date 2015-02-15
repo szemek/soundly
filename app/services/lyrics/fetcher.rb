@@ -25,7 +25,8 @@ module Lyrics
         Lyrics::Providers::Azlyrics,
         Lyrics::Providers::Lyricswikia,
         Lyrics::Providers::Lyricsmania,
-        Lyrics::Providers::Tekstowo
+        Lyrics::Providers::Tekstowo,
+        Lyrics::Providers::Metrolyrics,
       ]
     end
   end
