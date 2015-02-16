@@ -27,6 +27,7 @@ module Lyrics
         Lyrics::Providers::Lyricsmania,
         Lyrics::Providers::Tekstowo,
         Lyrics::Providers::Metrolyrics,
+        Lyrics::Providers::Songlyrics,
       ]
     end
   end

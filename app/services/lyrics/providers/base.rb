@@ -25,6 +25,18 @@ module Lyrics
 
       private
 
+      def prepare
+        raise NotImplementedError
+      end
+
+      def url
+        raise NotImplementedError
+      end
+
+      def extract
+        raise NotImplementedError
+      end
+
       def fetch
         puts "GET #{url}".blue
         @doc = Nokogiri::HTML(document)
