@@ -11,6 +11,12 @@ require(['$api/models'], function(models) {
       var trackName = track.name;
       $('#title').text(trackName);
 
+      var ignoredArtists = ["Spotify"];
+
+      if(_.contains(ignoredArtists, artistName)) {
+        return;
+      }
+
       $.get('http://soundly.herokuapp.com/lyrics', {artist: artistName, title: trackName}, function(data){
         $('#text').html(data);
       });
