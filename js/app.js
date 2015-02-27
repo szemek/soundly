@@ -34,16 +34,15 @@ app.controller('PlaylistController', ['$scope', function($scope){
   });
 }]);
 
-app.controller('ScrobblesController', ['$scope', function($scope){
+app.controller('ScrobblesController', ['$scope', '$http', function($scope, $http){
   var soundly_search_url = 'http://soundly.herokuapp.com/api/tracks/search';
 
   $scope.scrobbles = [];
 
   $scope.fetchScrobbles = function(options){
     var options = options || {};
-    $.post(soundly_search_url, options, function(tracks){
+    $http.post(soundly_search_url, options).success(function(tracks) {
       $scope.scrobbles = tracks;
-      _.defer(function(){$scope.$apply();});
     });
   };
 
