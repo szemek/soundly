@@ -1,0 +1,21 @@
+{
+  "name": "soundly",
+  "version": "0.0.1",
+  "authors": [
+    "Przemysław Dąbek <przemyslaw.dabek@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "jquery": "~2.1.3",
+    "d3": "~3.5.5",
+    "underscore": "~1.8.2"
+  }
+}
