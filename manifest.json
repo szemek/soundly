@@ -11,32 +11,6 @@
   "BundleIdentifier": "soundly",
   "BundleType": "Application",
   "BundleVersion": "0.1",
-  "DefaultTabs": [
-    {
-      "arguments": "index",
-      "title": {
-        "en": "Home"
-      }
-    },
-    {
-      "arguments": "lyrix",
-      "title": {
-        "en": "Lyrics"
-      }
-    },
-    {
-      "arguments": "playlist",
-      "title": {
-        "en": "Playlist"
-      }
-    },
-    {
-      "arguments": "activity",
-      "title": {
-        "en": "Activity"
-      }
-    }
-  ],
   "Dependencies": {
     "api": "1.0.0",
     "views": "1.0.0",
