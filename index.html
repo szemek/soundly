@@ -10,52 +10,27 @@
   <!-- Project CSS files -->
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+<body ng-controller="DashboardController">
   <div id="wrapper">
     <header>
       <h1>Soundly</h1>
+      <nav>
+        <ul>
+          <li><a ui-sref="scrobbles" ng-class="{highlighted: state.is('scrobbles')}">Scrobbles</a></li>
+          <li><a ui-sref="lyrics" ng-class="{highlighted: state.is('lyrics')}">Lyrics</a></li>
+          <li><a ui-sref="playlist" ng-class="{highlighted: state.is('playlist')}">Playlist</a></li>
+          <li><a ui-sref="activity" ng-class="{highlighted: state.is('activity')}">Activity</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <div id="index" class="section" ng-controller="ScrobblesController">
-      <input type='text' ng-model='query' ng-change='search()'>
-      <table id='tracks'>
-        <tr ng-repeat="track in scrobbles">
-          <td>{{track.name }}</td>
-          <td>{{track.album }}</td>
-          <td>{{track.artist }}</td>
-          <td>{{track.uts * 1000 | date:'yyyy-MM-dd HH:mm'}}</td>
-        </tr>
-      </table>
-    </div>
-
-    <div id="lyrix" class="section" style="display: none;">
-      <h2><span id="artist"></span> &mdash; <span id="title"></span></h2>
-      <div id="text"></div>
-    </div>
-
-    <div id="playlist" class="section" style="display: none;" ng-controller="PlaylistController">
-      <table>
-        <tr ng-repeat="track in tracks">
-          <td><strong>{{track.artist}}</strong></td>
-          <td>{{track.name}}</td>
-        </tr>
-      </table>
-    </div>
-
-    <div id="activity" class="section" style="display: none;">
-      <div ng-controller="RecentActivityController">
-        <svg class="chart"></svg>
-      </div>
-
-      <div ng-controller="AllActivityController">
-        <div ng-bind-html="svg"></div>
-      </div>
-    </div>
+    <div ui-view></div>
   </div>
 
   <!-- Dependencies -->
   <script src="/js/lib/jquery/dist/jquery.min.js"></script>
   <script src="/js/lib/angular/angular.min.js"></script>
+  <script src="/js/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="/js/lib/underscore/underscore-min.js"></script>
   <script src="/js/lib/d3/d3.min.js"></script>
 

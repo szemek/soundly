@@ -1,0 +1,11 @@
+<div id="index" class="section" ng-controller="ScrobblesController">
+  <input type='text' ng-model='query' ng-change='search()'>
+  <table id='tracks'>
+    <tr ng-repeat="track in scrobbles">
+      <td>{{track.name }}</td>
+      <td>{{track.album }}</td>
+      <td>{{track.artist }}</td>
+      <td>{{track.uts * 1000 | date:'yyyy-MM-dd HH:mm'}}</td>
+    </tr>
+  </table>
+</div>

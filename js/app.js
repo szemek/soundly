@@ -1,4 +1,30 @@
-var app = angular.module('soundly', []);
+var app = angular.module('soundly', ['ui.router']);
+
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/scrobbles');
+
+  $stateProvider
+    .state('scrobbles', {
+      url: '/scrobbles',
+      templateUrl: 'partials/scrobbles.html'
+    })
+    .state('lyrics', {
+      url: '/lyrics',
+      templateUrl: 'partials/lyrics.html'
+    })
+    .state('playlist', {
+      url: '/playlist',
+      templateUrl: 'partials/playlist.html'
+    })
+    .state('activity', {
+      url: '/activity',
+      templateUrl: 'partials/activity.html'
+    })
+}]);
+
+app.controller('DashboardController', ['$scope', '$state', function($scope, $state){
+  $scope.state = $state;
+}]);
 
 app.controller('PlaylistController', ['$scope', function($scope){
   $scope.tracks = [];
