@@ -1,4 +1,6 @@
-app.controller('LyricsController', ['$scope', function($scope){
+angular.module('soundly.routes.lyrics', []);
+
+angular.module('soundly.routes.lyrics').controller('LyricsController', ['$scope', function($scope){
     require(['$api/models'], function(models) {
     var player = models.player;
     function update_lyrics() {

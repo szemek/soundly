@@ -1,6 +1,12 @@
-var app = angular.module('soundly', ['ui.router']);
+angular.module('soundly', [
+  'ui.router',
+  'soundly.routes.activity',
+  'soundly.routes.lyrics',
+  'soundly.routes.playlist',
+  'soundly.routes.scrobbles'
+]);
 
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+angular.module('soundly').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/scrobbles');
 
   $stateProvider
@@ -22,6 +28,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     })
 }]);
 
-app.controller('DashboardController', ['$scope', '$state', function($scope, $state){
+angular.module('soundly').controller('DashboardController', ['$scope', '$state', function($scope, $state){
   $scope.state = $state;
 }]);

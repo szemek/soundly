@@ -1,4 +1,14 @@
-angular.module('soundly').controller('RecentActivityController', ['$scope', '$http', function($scope, $http){
+angular.module('soundly.routes.activity', []);
+
+angular.module('soundly.routes.activity').controller('AllActivityController', ['$scope', '$http', '$sce', function($scope, $http, $sce){
+  var activity_svg_url = 'http://soundly.herokuapp.com/activity/all.svg';
+
+  $http.get(activity_svg_url).success(function(data){
+    $scope.svg = $sce.trustAsHtml(data);
+  });
+}]);
+
+angular.module('soundly.routes.activity').controller('RecentActivityController', ['$scope', '$http', function($scope, $http){
   var last_30_days_activity_url = 'http://soundly.herokuapp.com/activity/recent.json';
 
   var draw = function(data){
