@@ -3,7 +3,8 @@ angular.module('soundly', [
   'soundly.routes.activity',
   'soundly.routes.lyrics',
   'soundly.routes.playlist',
-  'soundly.routes.scrobbles'
+  'soundly.routes.scrobbles',
+  'soundly.api.spotify'
 ])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/scrobbles');
