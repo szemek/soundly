@@ -3,6 +3,5 @@ angular.module('soundly').controller('AllActivityController', ['$scope', '$http'
 
   $http.get(activity_svg_url).success(function(data){
     $scope.svg = $sce.trustAsHtml(data);
-    _.defer(function(){$scope.$apply();});
   });
 }])

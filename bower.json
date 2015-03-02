@@ -17,6 +17,7 @@
     "jquery": "~2.1.3",
     "d3": "~3.5.5",
     "underscore": "~1.8.2",
-    "angular-ui-router": "~0.2.13"
+    "angular-ui-router": "~0.2.13",
+    "spotify-web-api-js": "~0.13.0"
   }
 }
