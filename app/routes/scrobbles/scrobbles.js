@@ -1,6 +1,5 @@
-angular.module('soundly.routes.scrobbles', []);
-
-angular.module('soundly.routes.scrobbles').controller('ScrobblesController', ['$scope', '$http', function($scope, $http){
+angular.module('soundly.routes.scrobbles', [])
+.controller('ScrobblesController', ['$scope', '$http', function($scope, $http){
   var soundly_search_url = 'http://soundly.herokuapp.com/api/tracks/search';
 
   $scope.scrobbles = [];

@@ -1,6 +1,5 @@
-angular.module('soundly.routes.playlist', []);
-
-angular.module('soundly.routes.playlist').controller('PlaylistController', ['$scope', function($scope){
+angular.module('soundly.routes.playlist', [])
+.controller('PlaylistController', ['$scope', function($scope){
   $scope.tracks = [];
 
   $scope.updatePlaylist = function(player, models){
