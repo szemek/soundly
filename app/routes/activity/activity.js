@@ -1,14 +1,12 @@
-angular.module('soundly.routes.activity', [])
-.controller('AllActivityController', ['$scope', '$http', '$sce', function($scope, $http, $sce){
-  var activity_svg_url = 'http://soundly.herokuapp.com/activity/all.svg';
-
-  $http.get(activity_svg_url).success(function(data){
+angular.module('soundly.routes.activity', [
+  'soundly.api.soundly'
+])
+.controller('AllActivityController', ['$scope', '$http', '$sce', 'SoundlyApi', function($scope, $http, $sce, SoundlyApi){
+  SoundlyApi.allActivity().success(function(data){
     $scope.svg = $sce.trustAsHtml(data);
   });
 }])
-.controller('RecentActivityController', ['$scope', '$http', function($scope, $http){
-  var last_30_days_activity_url = 'http://soundly.herokuapp.com/activity/recent.json';
-
+.controller('RecentActivityController', ['$scope', '$http', 'SoundlyApi', function($scope, $http, SoundlyApi){
   var draw = function(data){
     var width = 800,
       height = 150;
@@ -42,7 +40,7 @@ angular.module('soundly.routes.activity', [])
       .text(function(d) { return d; });
   };
 
-  $http.get(last_30_days_activity_url).success(function(data){
+  SoundlyApi.recentActivity().success(function(data){
     draw(data);
   });
 }]);
