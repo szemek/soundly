@@ -12,10 +12,6 @@ require(['$api/models'], function(models) {
     });
   };
 
-  player.addEventListener('change:track', function() {
-    skip();
-  });
-
-  skip();
+  setInterval(skip, 1000);
 });
 
