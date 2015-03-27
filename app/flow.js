@@ -6,7 +6,7 @@ require(['$api/models'], function(models) {
       var track = player.track;
 
       if(track && track.advertisement) {
-        player.seek(track.duration - 1);
+        player.seek(player.duration - 1);
         player.play();
       }
     });
