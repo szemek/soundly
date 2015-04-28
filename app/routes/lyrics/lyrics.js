@@ -27,7 +27,7 @@ angular.module('soundly.routes.lyrics', [])
     // listeners
     models.application.addEventListener('arguments', function() {
       var arguments = models.application.arguments;
-      if(arguments[0] == 'lyrix') {
+      if(arguments[0] == 'lyrics') {
         update_lyrics();
       }
     });
