@@ -9,8 +9,7 @@ module Lyrics
 
         rules = [
           ['?', '%3F'],
-          ["'", '%27'],
-          [/[ _@"]/, '_']
+          [/[ _@"']/, '_']
         ]
         rules.each do |pattern, sub|
           @artist.gsub!(pattern, sub)
