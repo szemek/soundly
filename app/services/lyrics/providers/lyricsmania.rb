@@ -9,7 +9,7 @@ module Lyrics
 
         rules = [
           ['?', '%3F'],
-          ["'", '%27'],
+          ["'", ''],
           [/[ _@"]/, '_']
         ]
         rules.each do |pattern, sub|
