@@ -27,6 +27,13 @@ angular.module('soundly', [
       templateUrl: '/app/routes/activity/activity.html'
     })
 }])
+.config(['$compileProvider', function($compileProvider) {
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|sp|spotify):/);
+}])
 .controller('DashboardController', ['$scope', '$state', function($scope, $state){
   $scope.state = $state;
+
+  $scope.navigate = function(uri) {
+    window.location = uri;
+  };
 }]);

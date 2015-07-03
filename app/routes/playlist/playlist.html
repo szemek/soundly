@@ -1,7 +1,7 @@
 <div id="playlist" class="section" ng-controller="PlaylistController" contenteditable="true">
   <table>
     <tr ng-repeat="track in tracks">
-      <td><strong>{{track.artist}}</strong></td>
+      <td><strong><a ng-click="navigate(track.artist.uri);">{{track.artist.name}}</a></strong></td>
       <td>{{track.name}}</td>
     </tr>
   </table>

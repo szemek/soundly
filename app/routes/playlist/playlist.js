@@ -13,7 +13,10 @@ angular.module('soundly.routes.playlist', [])
           playlist.tracks.snapshot().done(function(snapshot){
             _.each(_.range(snapshot.length), function(i){
               var track = snapshot.get(i);
-              $scope.tracks.push({name: track.name, artist: track.artists[0].name});
+              $scope.tracks.push({
+                name: track.name,
+                artist: track.artists[0]
+              });
               _.defer(function(){$scope.$apply();});
             });
           });

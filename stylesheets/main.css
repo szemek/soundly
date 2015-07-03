@@ -108,6 +108,10 @@ table {
   color: white;
 }
 
+#playlist a {
+  cursor: pointer;
+}
+
 #playlist table {
   border-collapse: collapse;
 }
