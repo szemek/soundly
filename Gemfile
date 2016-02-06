@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.3.0'
 
 gem 'rails', '4.2.0'
 
@@ -29,7 +29,7 @@ gem 'jquery-rails', '~> 4.0.3'
 gem 'memcachier', '~> 0.0.2'
 gem 'mongoid', '~> 4.0.1'
 gem 'nokogiri', '~> 1.6.6.2'
-gem 'passenger', '~> 4.0.59'
+gem 'passenger', '~> 5.0.24'
 gem 'pry-rails', '~> 0.3.3'
 gem 'responders', '~> 2.1.0'
 gem 'rest-client', '~> 1.7.2'
