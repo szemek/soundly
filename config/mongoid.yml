@@ -1,12 +1,12 @@
 development:
-  sessions:
+  clients:
     default:
       database: soundly_development
       hosts:
         - localhost:27017
 
 test:
-  sessions:
+  clients:
     default:
       database: soundly_test
       hosts:
@@ -19,6 +19,8 @@ test:
         retry_interval: 0
 
 production:
-  sessions:
+  clients:
     default:
       uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        connect_timeout: 15
